@@ -3,6 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
+	//movement needs to be confirmed on chain
 	[Export]
 	public int Speed { get; set; } = 400;
 
