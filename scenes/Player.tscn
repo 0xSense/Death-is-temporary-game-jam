@@ -17,3 +17,5 @@ texture = ExtResource("1_gt376")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.8147e-06, -0.333333)
 shape = SubResource("RectangleShape2D_rvyqa")
+
+[node name="Transaction" type="Transaction" parent="."]

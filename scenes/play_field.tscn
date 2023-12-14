@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgsu1jdo6xcp1"]
+[gd_scene load_steps=9 format=3 uid="uid://dgsu1jdo6xcp1"]
 
 [ext_resource type="Texture2D" uid="uid://ba51cydmmg48o" path="res://assets/WhitePanel.png" id="1_5d0rd"]
 [ext_resource type="Texture2D" uid="uid://b4mwat4lm3hb" path="res://assets/Play-Area.png" id="2_b2oq8"]
 [ext_resource type="Texture2D" uid="uid://dhv6pwnqw283x" path="res://assets/Player-Area-Horizontal.png" id="3_0s2ex"]
-[ext_resource type="PackedScene" uid="uid://bxeho5oxt5g3b" path="res://scenes/box.tscn" id="4_by5u0"]
 [ext_resource type="PackedScene" uid="uid://dheijmdoinhiw" path="res://scenes/Player.tscn" id="5_1ny4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqep2"]
@@ -75,11 +74,6 @@ texture = ExtResource("3_0s2ex")
 position = Vector2(-0.0247917, 0.0184135)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wvc6h")
-
-[node name="grid" type="Node2D" parent="."]
-
-[node name="box" parent="grid" instance=ExtResource("4_by5u0")]
-position = Vector2(4, 8)
 
 [node name="Player" parent="." instance=ExtResource("5_1ny4w")]
 position = Vector2(351, 1143)
