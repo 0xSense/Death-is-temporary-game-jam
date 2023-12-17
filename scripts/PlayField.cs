@@ -3,13 +3,12 @@ using System;
 
 public partial class PlayField : Node2D
 {
+	private CharacterBody2D _bonk2D;
+	private Label _button;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		_bonk2D = GetNode<CharacterBody2D>("Bonk");
+		_button = GetNode<Label>("Text");
 	}
 }
