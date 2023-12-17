@@ -1,15 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://7epx4c5oe8ov"]
-
-[ext_resource type="FontFile" uid="uid://ct3xr7g6ke213" path="res://assets/fonts/Minecraft.ttf" id="1_8kf10"]
+[gd_scene format=3 uid="uid://7epx4c5oe8ov"]
 
 [node name="ui" type="Node2D"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 316.0
-offset_top = 8.0
-offset_right = 409.0
-offset_bottom = 93.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("1_8kf10")
-theme_override_font_sizes/normal_font_size = 48
-text = "0"
+[node name="Timer" type="Timer" parent="."]

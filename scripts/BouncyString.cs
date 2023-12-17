@@ -14,7 +14,6 @@ public partial class BouncyString : CharacterBody2D
 	public override void _Ready()
 	{
 		_stringSprite = GetNode<AnimatedSprite2D>("StringAnimation");
-
 	}
 
 	public override void _Input(InputEvent @event)
