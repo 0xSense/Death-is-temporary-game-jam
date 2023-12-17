@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgsu1jdo6xcp1"]
+
+[ext_resource type="Texture2D" uid="uid://ba51cydmmg48o" path="res://assets/WhitePanel.png" id="1_5d0rd"]
+[ext_resource type="Script" path="res://scripts/PlayField.cs" id="1_aqpfy"]
+[ext_resource type="PackedScene" uid="uid://dheijmdoinhiw" path="res://scenes/Bonk.tscn" id="5_1ny4w"]
+[ext_resource type="PackedScene" uid="uid://b7xthadv2mwm2" path="res://scenes/BouncyString.tscn" id="6_hr5td"]
+[ext_resource type="PackedScene" uid="uid://7epx4c5oe8ov" path="res://scenes/UI.tscn" id="7_ex5pi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpnt2"]
+size = Vector2(26, 2435)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uurr6"]
+size = Vector2(21, 2393)
+
+[node name="play_field" type="Node2D"]
+script = ExtResource("1_aqpfy")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(359, 639)
+scale = Vector2(79.7378, -79.8536)
+texture = ExtResource("1_5d0rd")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("5_1ny4w")]
+position = Vector2(334, 126)
+platform_wall_layers = 1
+
+[node name="BouncyString" parent="." instance=ExtResource("6_hr5td")]
+position = Vector2(347, 1212)
+
+[node name="UI" parent="." instance=ExtResource("7_ex5pi")]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="LeftWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
+position = Vector2(-13, 196.5)
+shape = SubResource("RectangleShape2D_xpnt2")
+
+[node name="RightWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+position = Vector2(730.5, 166.5)
+shape = SubResource("RectangleShape2D_uurr6")

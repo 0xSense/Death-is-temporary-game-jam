@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://b7xthadv2mwm2"]
+
+[ext_resource type="Script" path="res://scripts/BouncyString.cs" id="1_2atrr"]
+[ext_resource type="Texture2D" uid="uid://b3cp4j3764u6h" path="res://assets/animations/string-bounce/string-bounce-static.png" id="1_60elk"]
+[ext_resource type="Texture2D" uid="uid://4e8dk7ds1a5j" path="res://assets/animations/string-bounce/string-bounce-0.png" id="2_8kyy7"]
+[ext_resource type="Texture2D" uid="uid://dgj7chybdtvxm" path="res://assets/animations/string-bounce/string-bounce-1.png" id="3_6gshb"]
+[ext_resource type="Texture2D" uid="uid://dv03d4h4slxel" path="res://assets/animations/string-bounce/string-bounce-2.png" id="4_hckjr"]
+[ext_resource type="Texture2D" uid="uid://b3236m2ddjx5j" path="res://assets/animations/string-bounce/string-bounce-3-up.png" id="5_u151i"]
+[ext_resource type="Texture2D" uid="uid://h46cyblk0wkr" path="res://assets/animations/string-bounce/string-bounce-4-up.png" id="6_uxbta"]
+[ext_resource type="Texture2D" uid="uid://b1at8v0viwrt4" path="res://assets/animations/string-bounce/string-bounce-5.png" id="7_4jjc4"]
+[ext_resource type="Texture2D" uid="uid://kn2uh4kmyavx" path="res://assets/animations/string-bounce/string-bounce-6-up.png" id="8_s8o06"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21xxe"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_60elk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8kyy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6gshb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hckjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u151i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uxbta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4jjc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s8o06")
+}],
+"loop": true,
+"name": &"string",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nei4y"]
+size = Vector2(125, 28)
+
+[node name="BouncyString" type="CharacterBody2D"]
+script = ExtResource("1_2atrr")
+
+[node name="StringAnimation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_21xxe")
+animation = &"string"
+frame_progress = 0.656206
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_nei4y")

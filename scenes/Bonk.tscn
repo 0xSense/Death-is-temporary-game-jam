@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dheijmdoinhiw"]
+
+[ext_resource type="Texture2D" uid="uid://cktoeu51xvsmc" path="res://assets/pixelBonk.png" id="1_gt376"]
+[ext_resource type="Script" path="res://scripts/Bonk.cs" id="2_00iyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvyqa"]
+size = Vector2(30, 30.6667)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(49, 48)
+scale = Vector2(3, 3)
+script = ExtResource("2_00iyr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gt376")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8147e-06, -0.333333)
+shape = SubResource("RectangleShape2D_rvyqa")
