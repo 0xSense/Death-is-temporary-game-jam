@@ -9,29 +9,15 @@ public partial class Player : CharacterBody2D
 
 	private Vector2 _target;
 
-	public override void _Input(InputEvent @event)
-	{
-		if (@event.IsActionPressed("click"))
-		{
-			_target = GetGlobalMousePosition();
-		}
-	}
-
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 
-		//pc user controls & mobile controls
-		// Physics based movement than gets confirmed on chain and changes the dirrection the sprite moves too
+	}
 
-		Velocity = Position.DirectionTo(_target) * Speed;
-
-
-		if (Position.DistanceTo(_target) > 10)
-		{
-			MoveAndSlide();
-		}
-
+	public void Bounce()
+	{
+		GD.Print("Bounce");
 	}
 
 }

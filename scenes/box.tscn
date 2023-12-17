@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxeho5oxt5g3b"]
 
-[ext_resource type="Texture2D" uid="uid://0xlnnthxmwbt" path="res://assets/black_panel.png" id="1_j188f"]
+[ext_resource type="Texture2D" uid="uid://0xlnnthxmwbt" path="res://assets/black_panel.png" id="1_rwdvw"]
 
 [node name="box" type="Node2D"]
 
@@ -8,4 +8,4 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(6, 6)
-texture = ExtResource("1_j188f")
+texture = ExtResource("1_rwdvw")

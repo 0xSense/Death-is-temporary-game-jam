@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgsu1jdo6xcp1"]
+[gd_scene load_steps=12 format=3 uid="uid://dgsu1jdo6xcp1"]
 
 [ext_resource type="Texture2D" uid="uid://ba51cydmmg48o" path="res://assets/WhitePanel.png" id="1_5d0rd"]
+[ext_resource type="Script" path="res://scripts/PlayField.cs" id="1_aqpfy"]
 [ext_resource type="Texture2D" uid="uid://b4mwat4lm3hb" path="res://assets/Play-Area.png" id="2_b2oq8"]
 [ext_resource type="Texture2D" uid="uid://dhv6pwnqw283x" path="res://assets/Player-Area-Horizontal.png" id="3_0s2ex"]
 [ext_resource type="PackedScene" uid="uid://dheijmdoinhiw" path="res://scenes/Player.tscn" id="5_1ny4w"]
+[ext_resource type="PackedScene" uid="uid://b7xthadv2mwm2" path="res://scenes/BouncyString.tscn" id="6_hr5td"]
+[ext_resource type="PackedScene" uid="uid://7epx4c5oe8ov" path="res://scenes/UI.tscn" id="7_ex5pi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqep2"]
 size = Vector2(8.78472, 16.0245)
@@ -18,8 +21,10 @@ size = Vector2(9, 16)
 size = Vector2(14.4504, 20)
 
 [node name="play_field" type="Node2D"]
+script = ExtResource("1_aqpfy")
 
 [node name="background" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(359, 639)
 scale = Vector2(79.7378, -79.8536)
 texture = ExtResource("1_5d0rd")
@@ -35,7 +40,6 @@ scale = Vector2(20.4901, 44.9935)
 texture = ExtResource("2_b2oq8")
 
 [node name="Area2D" type="Area2D" parent="touch_area_indicators/North"]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="touch_area_indicators/North/Area2D"]
 position = Vector2(-0.0588388, 0.00996399)
@@ -72,8 +76,12 @@ texture = ExtResource("3_0s2ex")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="touch_area_indicators/Right/Area2D"]
 position = Vector2(-0.0247917, 0.0184135)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wvc6h")
 
 [node name="Player" parent="." instance=ExtResource("5_1ny4w")]
 position = Vector2(351, 1143)
+
+[node name="bounceform" parent="." instance=ExtResource("6_hr5td")]
+position = Vector2(347, 1212)
+
+[node name="ui" parent="." instance=ExtResource("7_ex5pi")]
